@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12" id="aboutcol">
+  <div class="contactsec">
+  <div id="mailcard" class="card" style="  ">
+    <h5 class="card-header">Contact Us</h5>
+    <div class="card-body" style="padding:0px !important;">
+
+      <form id="contactform" method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <div class="form-actions" id="contactaction">
+            <button type="submit" id="contactbtn">Send</button>
+          </div>
+      </form>
+
+
+
+    </div>
+  </div>
+  </div>
+
+  </div>
+  </div>
+
+<div class="row">
+<div class="col-md-12"  id="ppcol">
+
+
+  <p>Got some feedback or a new idea? Want to know more about us?
+</p>
+<p id="someinfo">
+  We are willing to help our visitors every way possible, please drop an email at bloggystacker@gmail.com
+
+  For Advertisement And Other Business Opportunities
+  If you have ideas on how we could work together, please email us at bloggystacker@gmail.com, We’d love to hear from you.
+
+  Please note that we pride ourselves on following precise journalistic standards and ethics when doing our reviews and making recommendations. As such, our writers and editors maintain full editorial independence from our business operations.
+</p></div>
+  </div>
+  </div>
+{% endblock content %}

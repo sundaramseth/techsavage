@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container-fluid">
+
+
+  <div class="row">
+
+<div id="freecol" class="col-md-12" style="">
+<div class="row">
+
+    <div class="col-md-12" style="text-align: -webkit-center; padding-top:30px;">
+
+      <table style="width:40%">
+        <tbody>
+          <tr>
+            <td>
+              <h2 style="text-align: center;   font-weight: 400; !important">Search Your Blogs</h2>
+            </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="searchinputbox">
+                  <form class="form-inline " action="{% url 'search_results' %}" method="get">
+                  <button class="iconss" type="submit"><i style="color: #e56c5b;" class="material-icons">search</i></button>
+                    <input  id="searchinputfront" name="q" type="text" placeholder="Search Blogs, Topic, Content">
+                  </form>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center; padding-top: 10px;">
+                  <span id="spanbanner"><a style="color:#f7f7f7;" href="{% url 'jobs' %}" >Latest Job Notification</a></span>
+                  <span id="">|</span>
+
+
+                    <span id="spanbanner"> <a style="color:#f7f7f7;" href="{% url 'djangoblog' %}" > Web Development Course </a></span>
+                    <br>
+                    <span id="spanbanner"><a style="color:#f7f7f7;" href="{% url 'pythonblog' %}" > Blogs on Django/Python</a></span>
+                    </td>
+                </tr>
+
+          </tbody>
+        </table>
+
+
+</div>
+  </div>
+</div>
+
+
+
+    </div>
+
+
+
+    <!-- This div is used to indicate the original position of the scrollable fixed div. -->
+
+
+    <!-- This div will be displayed as fixed bar at the top of the page, when user scrolls -->
+
+
+
+    <div class="row"  style="
+    padding-top: 30px;
+">
+        <!-- Blog Entries Column -->
+
+        <div class="col-md-8 borcls">
+
+            <h4 class="sticky" >What's New<span id="horiline"></span></h4>
+
+
+          <div class="row">
+            <div class="col-md-12" id="laken" style="padding: 4px 45px;">
+            {% for post in Latestpost %}
+            <div class="card mb-4c" >
+              <a href="{% url 'post_detail' post.slug  %}">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-3">
+              <img id="inwidth" src="{{ post.images.url }}" />
+          </div>
+          <div class="col-md-9">
+                    <h5 class="card-title">{{ post.title }}</h5>
+
+                    <p class="card-text">{{post.description|slice:":200" }}</p>
+
+                </div>
+              </div>
+              </div>
+              </a>
+            </div>
+
+            {% endfor %}
+</div>
+</div>
+<div class="row">
+  <div class="col-md-12" style="    padding-left: 37px;">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+  <li class="page-item ">
+
+        {% if page_obj.has_previous %}
+            <a class="page-link" href="?page=1">first</a>
+        </li>
+
+         <li class="page-item">  <a class="page-link" href="?page={{ page_obj.previous_page_number }}">previous</a>
+        </li>{% endif %}
+
+    <li class="page-item">
+          <span class="page-link">  Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span></li>
+
+        {% if page_obj.has_next %}
+    <li class="page-item">   <a class="page-link" href="?page={{ page_obj.next_page_number }}">next</a>
+  </li>
+     <li class="page-item">  <a  class="page-link" href="?page={{ page_obj.paginator.num_pages }}">last </a>
+      </li>
+       {% endif %}
+
+</ul></nav>
+</div>
+</div>
+        </div>
+
+        <div class="col-md-4 rightpan">
+
+    {% block rightpannel %} {% include 'rightpannel.html' %} {% endblock rightpannel %}
+
+
+        </div>
+
+
+
+    </div>
+
+</div>
+
+{%endblock%}

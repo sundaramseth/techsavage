@@ -1,0 +1,95 @@
+{% extends "base.html" %}{% load static %}
+{% block content %}
+<div class="container-fluid">
+  <div class="row" id="chemicalrow" style="    padding-top: 50px;
+">
+    <div class="col-md-12"  style="min-height: 800px;
+    padding-top: 5px;">
+<div class="row">
+<div class="col-md-12">
+<div class="gatebanner">
+  <div class="media">
+    <img class="align-self-center mr-3" style="    height: auto;
+    width: 200px;" src="{% static "img/science.jpg" %}" alt="Generic placeholder image">
+    <div class="media-body">
+  <h1 style="font-weight:900;">SCIENCE</h1>
+    <h4>Science 11th 12th Tutorial</h4>
+    </div>
+  </div>
+</div>
+  </div>
+  </div>
+  <div class="row" style="">
+  <div class="col-md-12">
+<div class="row">
+
+<div class="col-md-3">
+  <a href="http://www.bloggystacker.com/bloggyapp/cbse-up-board-isc-board-12th-science-syllabus-2020/">
+  <div class="course_content">
+    <div class="media">
+      <img class="align-self-center mr-2" src="{% static "img/icons/syllabus.svg" %}" alt="Generic placeholder image">
+    <div class="media-body">
+      <h5 class="mt-0">Syllabus 11-12</h5>
+
+    </div>
+</div>
+</div>
+</a>
+  </div>
+  <div class="col-md-3">
+        <a href="{% url 'physicslecture' %}">
+    <div class="course_content">
+      <div class="media">
+        <img class="align-self-center mr-2" src="{% static "img/icons/physics.svg" %}" alt="Generic placeholder image">
+      <div class="media-body">
+        <h5 class="mt-0">Physics</h5>
+
+      </div>
+  </div>
+  </div>
+  </a>
+    </div>
+  <div class="col-md-3">
+    <a href="{% url 'chemistry' %}">
+    <div class="course_content">
+      <div class="media">
+        <img class="align-self-center mr-2" src="{% static "img/icons/chem.svg" %}" alt="Generic placeholder image">
+      <div class="media-body">
+        <h5 class="mt-0">Chemistry</h5>
+
+      </div>
+  </div>
+  </div>
+  </a>
+    </div>
+
+      <div class="col-md-3">
+        <div class="course_content">
+          <div class="media">
+            <img class="align-self-center mr-2" src="{% static "img/icons/bio.svg" %}" alt="Generic placeholder image">
+          <div class="media-body">
+            <h5 class="mt-0">Biology</h5>
+
+          </div>
+      </div>
+      </div>
+        </div>
+
+
+
+
+
+  </div>
+
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-12">
+
+
+      </div>
+      </div>
+  </div>
+  </div>
+  </div>
+{% endblock%}

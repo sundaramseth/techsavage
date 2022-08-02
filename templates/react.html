@@ -1,0 +1,47 @@
+{% extends 'base.html' %}{% block content %}
+<div class="container-fluid">
+
+<div class="row" id="trendrow">
+  <div class="col-md-8 searchbor" >
+
+<div class="row">
+  <div class="col-md-12">
+  <h2 id="h1ang">React<span id="horiline"></span></h2>
+</div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+
+    {% for post in object_list %}
+    <div class="card mb-4" >
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-3">
+      <img id="inwidth" src="{{ post.images.url }}" />
+  </div>
+  <div class="col-md-9">
+            <h2 class="card-title">{{ post.title }}</h2>
+            <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+            <p class="card-text">{{post.description}}</p>
+            <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+        </div>
+      </div>
+      </div>
+    </div>
+        {% endfor %}
+    </div>
+
+    </div>
+
+</div>
+
+
+<div class="col-md-4 rightpan">
+
+{% block rightpannel %} {% include 'rightpannel.html' %} {% endblock rightpannel %}
+
+</div>
+</div>
+</div>
+
+{% endblock %}

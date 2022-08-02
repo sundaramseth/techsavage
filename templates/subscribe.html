@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+ {% block content %}
+
+<div class="container-fluid">
+
+<div class="row" id="trendrow">
+
+  <div class="col-md-12 postcold">
+
+
+      <div class="row">
+            <div class="col-md-12 suscol">
+              <div class="innersubscribe">
+              <h5 id="nwesh" >Subscribe for weekly newsletter, It's Very helpful for you .</h5>
+      <div class="subsbtn">
+        {% if form %}
+
+              <form id="subform" method="post" validate>
+                  {% csrf_token %}
+                  {{ form }}
+
+                  <button  type="submit" class="btn btn-outline-light " id="sublight">Subscribe</button>
+              </form>
+
+      {% endif %}
+      </div>
+      </div>
+      </div>
+          </div>
+
+
+          <div class="row">
+                    <div class="col-md-12 emlconf">
+                        {% if email %}
+                        <p>You have successfuly subscribe for weekly blogs.</p>
+                        <p>{{ email }} has been {{ action }}.</p>
+
+                        {% endif %}
+                    </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-12">
+                        {% for post in object_list %}
+                        <div class="col-md-3">
+                        <div class="card mb-4" >
+                            <div class="card-body">
+                              <div class="row">
+                                <div class="col-md-3">
+                          <img id="inwidth" src="{{ post.images.url }}" />
+                        </div>
+                        <div class="col-md-9">
+                                <h2 class="card-title">{{ post.title }}</h2>
+                                <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+                                <p class="card-text">{{post.description}}</p>
+                                <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                            </div>
+                          </div>
+                          </div>
+                        </div>    </div>
+                            {% endfor %}
+
+                        </div>
+
+                      </div>
+</div>
+
+</div>
+</div>
+ {% endblock content %}

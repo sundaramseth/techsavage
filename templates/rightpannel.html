@@ -1,0 +1,38 @@
+{% load static %}{% block rightpannel %}
+<div class="row rightrow" >
+
+
+    <div class="col-md-12">
+      <div class="">
+      <h4 id="trend">Trends<span id="trndhor"><span></h4>
+    <ul class="list-group" id="listgroup">
+    <li class="list-group-item"><a id="blowme" href="{% url 'angularblog' %}"><img src="{% static "img/icons/angula.png" %}" >Angular</a></li>
+    <li class="list-group-item"><a id="blowme" href="{% url 'reactblog' %}"><img src="{% static "img/icons/color.png" %}" >React</a></li>
+    <li class="list-group-item"><a  id="blowme" href="{% url 'djangoblog' %}"><img src="{% static "img/icons/djan.png" %}" >Django</a></li>
+    <li class="list-group-item"> <a id="blowme" href="{% url 'pythonblog' %}"><img src="{% static "img/icons/python.png" %}" >Python</a></li>
+    <li class="list-group-item"><a id="blowme" href="{% url 'programblog' %}"><img src="{% static "img/icons/program.png" %}" >Programs</a></li>
+    <li class="list-group-item"><a id="blowme" href="{% url 'javablog' %}"><img src="{% static "img/icons/js.png" %}" >JavaScript</a></li>
+    <li class="list-group-item"><a id="blowme" href="{% url 'nodeblog' %}"><img src="{% static "img/icons/node.png" %}" >Node.js</a></li>
+   <li class="list-group-item"><a id="blowme" href="{% url 'datascience' %}"><img src="{% static "img/icons/data.png" %}" >DataScience</a></li>
+    </ul>
+    </div>
+    </div>
+    </div>
+<div class="row">
+<div class="col-md-12">
+  <ul class="list-group" id="listgroup">
+    <h5 style="padding: 30px 0px 5px 0px;">You May Also Like<span id="trndhor"><span></h5>
+  {% for feature in featuredpost %}
+    <li class="list-group-item"><img id="youmay" src="{{ feature.images.url }}" /><a href="{% url 'post_detail' feature.slug  %}" >{{ feature.title }}</a></li>
+{% endfor %}
+  </ul>
+
+
+
+
+</div>
+  </div>
+
+
+
+{% endblock rightpannel %}

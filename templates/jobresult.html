@@ -1,0 +1,31 @@
+
+{% extends "jobbase.html" %}{% load static %}
+{% block content %}
+
+<div class="container-fluid">
+  <br>
+<div class="row" id="jobsrows">
+
+
+<div class="col-md-7" style="min-height:800px;">
+<br>
+<div class="list-group">
+
+<a href="#" class="list-group-item list-group-item-action active">
+  Latest Results 2020
+</a>
+{% for latest in result %}
+
+
+
+
+
+<a href="{% url 'job_detail' latest.slug  %}" class="list-group-item list-group-item-action"> {{ latest.postname }}</a>
+      {% endfor %}
+  </div>
+  </div>
+  <div class="col-md-3">
+    </div>
+  </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}{% load static %}
+{% block content %}
+<div class="container-fluid">
+  <div class="row" id="trendrows">
+<div class="col-md-12">
+<div class="row">
+  {% for post in object_list %}
+  <div class="col-md-3">
+    <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h6 class="card-title">{{ post.title }}</h6>
+    <p class="card-subtitle mb-2 text-muted">{{ post.author }} | {{ post.created_on}} </p>
+    <p class="card-text">{{post.description}}</p>
+
+  <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+  </div>
+</div>
+
+  </div>
+      {% endfor %}
+      </div>
+</div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,173 @@
+{% extends "base.html" %}{% load static %}
+{% block content %}
+
+<div class="container-fluid">
+<div class="row" id="jobsfront">
+<div class="col-md-12" style="min-height:800px;">
+
+         <div class="row" >
+           <div class="col-md-12" style="">
+             <div class="alert alert-warning alert-dismissible fade show" role="alert">
+               <a style="color:#fff;" href="https://feedburner.google.com/fb/a/mailverify?uri=BloggystackerJobNotifications&amp;loc=en_US">Subscribe to Goverment Job Notifications by Email</a>
+               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                 <span aria-hidden="true">&times;</span>
+               </button>
+             </div>
+
+             <div class="banner" style="height: 151px;
+   background: #1f2e67;" >
+   <h1 style="    color: #f2f5ff;
+    padding: 10px 20px;">Goverment Jobs 2020 </h1>
+<h4 style="    color: #f2f5ff;
+ padding: 10px 20px;">See Eligebility & Syllabus</h4>
+
+
+              </div>
+
+               <nav class="navbar navbar-expand-md navbar-light bg-dark navbar-hover" style="    padding: 0px !important;" >
+
+
+                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHovers" aria-controls="navbarDD" aria-expanded="false" aria-label="Navigation">
+                     <span class="navbar-toggler-icon"></span>
+                 </button>
+                 <div class="collapse navbar-collapse" id="navbarHovers">
+                     <ul class="navbar-nav">
+                       <li class="nav-item" >
+<a href="{% url 'jobs' %}">
+               <button type="button" class="btn btn-dark" >Home</button>
+</a>
+             </li>
+  <li class="nav-item" >
+<a href="{% url 'latest_job' %}">
+    <button type="button" class="btn btn-dark" >Latest Jobs</button>
+</a>
+  </li>
+  <li class="nav-item">
+    <a href="{% url 'admit_card' %}">
+    <button type="button" class="btn btn-dark">Admit Card</button>
+</a>
+  </li>
+  <li class="nav-item">
+<a href="{% url 'result' %}">
+    <button type="button" class="btn btn-dark">Results</button>
+</a>
+  </li>
+  <li class="nav-item">
+    <button type="button" class="btn btn-dark">Syllabus</button>
+  </li>
+    <li class="nav-item">
+      <button type="button" class="btn btn-dark">Admission</button>
+
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn btn-dark">Answer Key</button>
+
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-dark">Important</button>
+
+          </li>
+</ul></div>
+</nav>
+             </div>
+
+</div>
+<div class="row">
+<div class="col-md-12" style="    text-align: -webkit-center;">
+
+  <table class="table table-bordered" style="width:fit-content;  margin-top: 15px;   text-align: center;">
+
+    <tbody>
+      <tr id="trstyle">
+  {% for topjob in topjobs %}
+       <td><a href="{% url 'job_detail' topjob.slug  %}"> {{ topjob.postname |slice:":23" }} <br> Apply Online </a></td>
+
+
+{% endfor %}
+
+      </tr>
+
+      <tr id="trstyle2">
+  {% for topjobs in top_job %}
+       <td><a href="{% url 'job_detail' topjobs.slug  %}"> {{ topjobs.postname |slice:":20" }} <br> Apply Online </a></td>
+{% endfor %}
+
+
+      </tr>
+
+    </tbody>
+  </table>
+
+
+  </div>
+  </div>
+  <div class="row">
+<div class="col-md-12">
+<div class="row" style="text-align: -webkit-center;">
+<div class="col-md-4">
+  <div class="list-group">
+  <a href="#" id="resultlist" class="list-group-item list-group-item-action active" >
+  Result
+  </a>
+  {% for result in results %}
+
+
+
+    <a href="{% url 'job_detail' result.slug  %}"  id="resultlist2" class="list-group-item list-group-item-action"> {{ result.postname}}</a>
+            {% endfor %}
+            <a href="{% url 'result' %}"  style="color:#0072ff" class="list-group-item list-group-item-action">View More</a>
+
+
+
+</div>
+  </div>
+  <div class="col-md-4">
+    <div class="list-group">
+    <a href="#" id="resultlist" class="list-group-item list-group-item-action active">
+      Admit Card
+    </a>
+  {% for admit in admit_card %}
+
+
+
+    <a href="{% url 'job_detail' admit.slug  %}" id="resultlist2" class="list-group-item list-group-item-action"> {{ admit.postname}}</a>
+            {% endfor %}
+                <a href="{% url 'admit_card' %}"  style="color:#0072ff" class="list-group-item list-group-item-action">View More</a>
+    </div>
+    </div>
+    <div class="col-md-4">
+      <div class="list-group">
+
+      <a href="#" id="resultlist" class="list-group-item list-group-item-action active">
+        Latest Job
+      </a>
+  {% for latest in latest_job %}
+
+
+
+
+
+      <a  href="{% url 'job_detail' latest.slug  %}"  id="resultlist2" class="list-group-item list-group-item-action"> {{ latest.postname }}</a>
+            {% endfor %}
+            <a href="{% url 'latest_job' %}"  style="color:#0072ff" class="list-group-item list-group-item-action">View More</a>
+
+        </div>
+      </div>
+  </div>
+  </div>
+
+    </div>
+<div class="row">
+<div class="col-md-12">
+  <p style="margin-top:20px; margin-bottom:0; padding-bottom:0; text-align:center; line-height:0"><a target="_blank" href="http://feeds.feedburner.com/~r/BloggystackerJobNotifications/~6/3"><img id="feedburner" src="http://feeds.feedburner.com/BloggystackerJobNotifications.3.gif" alt="Bloggystacker Job Notifications" style="border:0"></a></p>
+
+  </div>
+  </div>
+
+
+
+</div>
+</div>
+
+</div>
+{% endblock content %}

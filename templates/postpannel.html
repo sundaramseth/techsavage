@@ -1,0 +1,38 @@
+{% load static %}{% block postpannel %}
+<div class="row rightrow" >
+
+
+    <div class="col-md-12">
+      <div class="">
+      <h4 id="trend">Trendings Topics<span id="trndhor"><span></h4>
+    <ul  id ="postdetaillist" class="list-group" >
+    <li class="list-group-item"><a id="blowme" href="{% url 'angularblog' %}"><img src="{% static "img/icons/angula.png" %}" >Angular</a></li>
+    <li class="list-group-item"><a id="blowme" href="{% url 'reactblog' %}"><img src="{% static "img/icons/color.png" %}" >React</a></li>
+    <li class="list-group-item"><a  id="blowme" href="{% url 'djangoblog' %}"><img src="{% static "img/icons/djan.png" %}" >Django</a></li>
+    <li class="list-group-item"> <a id="blowme" href="{% url 'pythonblog' %}"><img src="{% static "img/icons/python.png" %}" >Python</a></li>
+    <li class="list-group-item"><a id="blowme" href="{% url 'programblog' %}"><img src="{% static "img/icons/program.png" %}" >Programs</a></li>
+    <li class="list-group-item"><a id="blowme" href="{% url 'javablog' %}"><img src="{% static "img/icons/js.png" %}" >JavaScript</a></li>
+    <li class="list-group-item"><a id="blowme" href="{% url 'nodeblog' %}"><img src="{% static "img/icons/node.png" %}" >Node.js</a></li>
+   <li class="list-group-item"><a id="blowme" href="{% url 'datascience' %}"><img src="{% static "img/icons/data.png" %}" >DataScience</a></li>
+    </ul>
+    </div>
+    </div>
+    </div>
+<div class="row">
+<div class="col-md-12">
+      <div class="mytrend">
+<form style="border:1px solid #ccc;padding:10px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=BloggyStackerFeeds', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+  <p>Subscribe For Latest Feed</p>
+  <p><input type="text" class="form-control"  placeholder="name@gmail.com" name="email"/></p>
+  <input type="hidden" value="BloggyStackerFeeds" name="uri"/>
+  <input type="hidden" name="loc" value="en_US"/>
+  <input type="submit"  class="btn btn-outline-info" value="Subscribe" />
+</form>
+
+</div>
+</div>
+  </div>
+
+
+
+{% endblock postpannel %}

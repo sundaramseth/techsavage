@@ -1,0 +1,41 @@
+{% extends 'jobbase.html' %}
+ {% block content %}
+
+<div class="container-fluid">
+
+  <div class="row" id="trendrow">
+
+
+    <div class="col-md-12 " id="jobcol70">
+      <div class="row">
+
+        <div class="col-md-12 ">
+
+
+      <div class=" card postcards" >
+      <div class="card-body" style="padding:10px 0px ; ">
+
+        <h1><span>Post Name:{% block postname %} {{ jobs.postname }} {% endblock postname %}</h1>
+        <h2><span>Post Date:</span>{{ jobs.post_date}}</h2>
+        <h2><span>Post Update:</span>{{ jobs.post_update}}</h2>
+        <h2><span>Short Information: </span>{{ jobs.shortinfo}}</h2>
+            </div>
+
+                </div>
+                </div>      </div>
+
+                <div class="row">
+
+
+
+        <div class="col-md-12">{{ jobs.job_description | safe }}</div>
+
+</div>
+</div>
+
+
+
+
+</div>
+</div>
+{% endblock content %}

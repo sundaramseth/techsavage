@@ -1,0 +1,93 @@
+{% extends "base.html" %}{% load static %}
+{% block content %}
+<div class="container-fluid">
+  <div class="row" id="chemicalrow" style="    padding-top: 50px;
+">
+    <div class="col-md-12"  style="min-height: 800px;">
+<div class="row">
+<div class="col-md-12" style="padding:0px;">
+<div class="gatebanner2">
+  <div class="media">
+
+    <div class="media-body" style="padding-left: 12px;">
+  <h1 style="font-weight:900;    color: #fffffff7;">PROGRAMMING</h1>
+    <h4 style="font-weight:900;    color: #fffffff7;">Learn Basic to Advanced Programming for Interview</h4>
+    </div>
+  </div>
+</div>
+  </div>
+  </div>
+  <div class="row" style="">
+  <div class="col-md-12">
+<div class="row">
+
+<div class="col-md-3">
+    <a href="{% url 'listofprogram' %}" >
+  <div class="course_content">
+    <div class="media">
+      <img class="align-self-center mr-2" src="{% static "img/icons/syllabus.svg" %}" alt="Generic placeholder image">
+    <div class="media-body">
+      <h5 class="mt-0">List Of Program</h5>
+
+    </div>
+</div>
+</div>
+</a>
+  </div>
+  <div class="col-md-3">
+    <a href="{% url 'basicprogram' %}" >
+    <div class="course_content">
+      <div class="media">
+        <img class="align-self-center mr-2" src="{% static "img/icons/physics.svg" %}" alt="Generic placeholder image">
+      <div class="media-body">
+        <h5 class="mt-0">Basic</h5>
+
+      </div>
+  </div>
+  </div>
+  </a>
+    </div>
+  <div class="col-md-3">
+    <a href="{% url 'chemistry' %}">
+    <div class="course_content">
+      <div class="media">
+        <img class="align-self-center mr-2" src="{% static "img/icons/chem.svg" %}" alt="Generic placeholder image">
+      <div class="media-body">
+        <h5 class="mt-0">Standard</h5>
+
+      </div>
+  </div>
+  </div>
+  </a>
+    </div>
+
+      <div class="col-md-3">
+        <div class="course_content">
+          <div class="media">
+            <img class="align-self-center mr-2" src="{% static "img/icons/bio.svg" %}" alt="Generic placeholder image">
+          <div class="media-body">
+            <h5 class="mt-0">Advanced</h5>
+
+          </div>
+      </div>
+      </div>
+        </div>
+
+
+
+
+
+  </div>
+
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-12">
+
+
+      </div>
+      </div>
+  </div>
+  </div>
+  </div>
+{% endblock%}
